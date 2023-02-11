@@ -1,0 +1,15 @@
+{
+  "name": "be_app_wedding",
+  "version": "1.0.0",
+  "description": "apps for my wedding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Umaaamm",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
