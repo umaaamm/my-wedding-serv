@@ -1,10 +1,11 @@
 const mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    host : 'localhost',
-    database: 'db_my_wedding',
+    host : 'containers-us-west-161.railway.app',
+    database: 'railway',
     user: 'root',
-    password: ''
+    password: 'zG8UrJqpu9j85OOOSXNa',
+    port: '7328'
 });
 
 connection.connect(function(error){
