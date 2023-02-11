@@ -4,7 +4,8 @@
   "description": "apps for my wedding",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "netlify deploy --prod"
   },
   "author": "Umaaamm",
   "license": "ISC",
@@ -12,6 +13,9 @@
     "express": "^4.18.2",
     "mongoose": "^6.9.1",
     "mongose": "*",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "netlify-cli": "12.12.0",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^2.7.0"
   }
 }
