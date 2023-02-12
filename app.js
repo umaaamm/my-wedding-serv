@@ -3,7 +3,7 @@ const mongose = require('mongoose')
 const serverless = require('serverless-http')
 const app = express()
 const port = 3000
-const undanganSch = require('../model');
+const undanganSch = require('./model');
 // var database = require('./database');
 
 
@@ -108,9 +108,9 @@ app.get('/edit-marchendise/(:id)/(:isMarchendise)', (req, res, next) => {
 
 })
 
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// })
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
 
-app.use('/.netlify/functions/app')
-module.exports.handler = serverless(app);
+// app.use('/.netlify/functions/app')
+// module.exports.handler = serverless(app);
