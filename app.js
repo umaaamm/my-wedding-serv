@@ -38,6 +38,20 @@ app.get('/', (req, res) => {
     });
 })
 
+app.get('/summary', async (req, res) => {
+    var isMarchendiseCount = await undanganSch.find({ isMerchendise: "1" }).count();
+    var keteranganCount = await undanganSch.find({ keterangan: "Hadir" }).count();
+    var totalCount = await undanganSch.find().count();
+
+
+    let data = []
+    data.push({ "isMarchendiseCount": isMarchendiseCount });
+    data.push({ "keteranganCount": keteranganCount });
+    data.push({ "totalCount": totalCount });
+
+    res.json({ message: "ok", data: data });
+})
+
 app.get('/list', (req, res) => {
     undanganSch.find().then((result) => {
         res.json({ message: "ok", data: result });
