@@ -43,13 +43,7 @@ app.get('/summary', async (req, res) => {
     var keteranganCount = await undanganSch.find({ keterangan: "Hadir" }).count();
     var totalCount = await undanganSch.find().count();
 
-
-    let data = []
-    data.push({ "isMarchendiseCount": isMarchendiseCount });
-    data.push({ "keteranganCount": keteranganCount });
-    data.push({ "totalCount": totalCount });
-
-    res.json({ message: "ok", data: data });
+    res.json({ message: "ok", data: {"isMarchendiseCount": isMarchendiseCount,  "keteranganCount": keteranganCount ,"totalCount": totalCount} });
 })
 
 app.get('/list', (req, res) => {
