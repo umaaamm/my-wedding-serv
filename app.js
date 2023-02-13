@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/summary', async (req, res) => {
-    var isMarchendiseCount = await undanganSch.find({ isMerchendise: "1" }).count();
+    var isMarchendiseCount = await undanganSch.find({ keterangan: "Tidak Hadir" }).count();
     var keteranganCount = await undanganSch.find({ keterangan: "Hadir" }).count();
     var totalCount = await undanganSch.find().count();
 
