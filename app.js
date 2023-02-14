@@ -23,19 +23,19 @@ connect()
 
 app.get('/', (req, res) => {
     res.send('Hello this is my services for app wedding')
-    const wedding = new undanganSch({
-        nama: 'Dhimas',
-        keterangan: 'Hadir',
-        isMerchendise: '1',
-        tanggal: Date.now()
-    });
+    // const wedding = new undanganSch({
+    //     nama: 'Dhimas',
+    //     keterangan: 'Hadir',
+    //     isMerchendise: '1',
+    //     tanggal: Date.now()
+    // });
 
-    wedding.save().then((result) => {
-        console.log('blok', result);
+    // wedding.save().then((result) => {
+    //     console.log('blok', result);
 
-    }).catch((error) => {
-        console.log(error);
-    });
+    // }).catch((error) => {
+    //     console.log(error);
+    // });
 })
 
 app.get('/summary', async (req, res) => {
@@ -47,7 +47,7 @@ app.get('/summary', async (req, res) => {
 })
 
 app.get('/list', (req, res) => {
-    undanganSch.find().then((result) => {
+    undanganSch.find({ keterangan: "Hadir" }).then((result) => {
         res.json({ message: "ok", data: result });
     }).catch((error) => {
         res.json({ message: "error", data: "Gagal mengambil data dari database." });
