@@ -64,6 +64,25 @@ app.get('/list', (req, res) => {
     // });
 })
 
+app.get('/list-pilihan/(:keterangan)', (req, res) => {
+    let ket = req.params.keterangan;
+    undanganSch.find({ keterangan: ket }).then((result) => {
+        res.json({ message: "ok", data: result });
+    }).catch((error) => {
+        res.json({ message: "error", data: "Gagal mengambil data dari database." });
+    });
+
+
+    // var query = "select * from tbl_undangan";
+    // database.query(query, function (error, data) {
+    //     if (error) {
+    //         res.json({ message: "error", data: "Gagal mengambil data dari database." });
+    //     } else {
+    //         res.json({ message: "ok", data: data });
+    //     }
+    // });
+})
+
 app.get('/edit/(:id)/(:keterangan)', (req, res, next) => {
     let id = req.params.id;
     // var keterangan = req.params.keterangan;
