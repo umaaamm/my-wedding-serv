@@ -88,6 +88,7 @@ app.get('/edit/(:id)/(:keterangan)', (req, res, next) => {
     // var keterangan = req.params.keterangan;
     let updates={}
     updates["keterangan"] = req.params.keterangan;
+    updates["tanggal"] = new Date().getTime();
 
     undanganSch.findByIdAndUpdate(id, updates).then((result)=> {
         res.json({ message: "ok", data: "Berhasil mengupdate data." });
